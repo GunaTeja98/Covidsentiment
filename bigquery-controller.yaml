@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bigquery-controller
+  labels:
+    name: bigquery-controller
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: bigquery-controller
+  template:
+    metadata:
+      labels:
+        name: bigquery-controller
+    spec:
+      containers:
+      - name: bigquery
+        image: gcr.io/google-samples/pubsub-bq-pipe:v5
+        env:
+        - name: PROCESSINGSCRIPT
+          value: pubsub-to-bigquery
+        # This the name of pubsub topic
+        - name: PUBSUB_TOPIC
+          value: projects/data-sane/topics/pstopic
+        # This is the project ID in GCP.
+        - name: PROJECT_ID
+          value: data-sane
+        # The two settings to the dataset and table.
+        - name: BQ_DATASET
+          value: dsets
+        - name: BQ_TABLE
+          value: tweets

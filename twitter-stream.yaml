@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: twitter-stream
+  labels:
+    name: twitter-stream
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: twitter-stream
+  template:
+    metadata:
+      labels:
+        name: twitter-stream
+    spec:
+      containers:
+      - name: twitter-to-pubsub
+        image: gcr.io/google-samples/pubsub-bq-pipe:v5
+        env:
+        - name: PROCESSINGSCRIPT
+          value: twitter-to-pubsub
+        # This is the name of pubsub topic
+        - name: PUBSUB_TOPIC
+          value: projects/data-sane/topics/pstopic
+        # The following four settings are the twitter credentials information.
+        - name: CONSUMERKEY
+          value: yOgCASUCPzXgpqvvh05YtQWi2
+        - name: CONSUMERSECRET
+          value: 07e5kgLHwMGooGBdk5qbVy1pmxkA0UyJN8gJCBODy8LAo0p3sP
+        - name: ACCESSTOKEN
+          value: 836261139352813569-UhjRlrZmylxrFF5X2uzL0GLIAi1yVxI
+        - name: ACCESSTOKENSEC
+          value: 6LJqMmAhFZkdcmok6eDbHw1onmSN8QrvLk9kKcaQRSQ4B
+        - name: TWSTREAMMODE
+          value: sample
