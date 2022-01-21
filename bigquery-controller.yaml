@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: bigquery
-        image: gcr.io/data-sane/pubsub-pipe-image
+        image: gcr.io/data-sane/pubsub-pipe-image-01
         env:
         - name: PROCESSINGSCRIPT
           value: pubsub-to-bigquery
