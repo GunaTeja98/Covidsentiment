@@ -28,14 +28,13 @@ import utils
 
 # Get your twitter credentials from the environment variables.
 # These are set in the 'twitter-stream.json' manifest file.
-consumer_key = os.environ['yOgCASUCPzXgpqvvh05YtQWi2']
-consumer_secret = os.environ['07e5kgLHwMGooGBdk5qbVy1pmxkA0UyJN8gJCBODy8LAo0p3sP']
-access_token = os.environ['1481078165782945794-A7jMug9CSr8kdkVxytAlTzYWVnupcN']
-access_token_secret = os.environ['6LJqMmAhFZkdcmok6eDbHw1onmSN8QrvLk9kKcaQRSQ4B']
+consumer_key = os.environ['CONSUMERKEY']
+consumer_secret = os.environ['CONSUMERSECRET']
+access_token = os.environ['ACCESSTOKEN']
+access_token_secret = os.environ['ACCESSTOKENSEC']
 
-PUBSUB_TOPIC = os.environ['data-sane']
+PUBSUB_TOPIC = os.environ['PUBSUB_TOPIC']
 NUM_RETRIES = 3
-
 
 def publish(client, pubsub_topic, data_lines):
     """Publish to the given pubsub topic."""
