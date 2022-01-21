@@ -1,5 +1,11 @@
 # Covid-Twitter-Real-time-Sentiment-Analysis in Python using Kubernetes, PubSub, and BigQuery
 
+## Introduction
+
+The COVID-19 pandemic caused by the novel coronavirus SARS-CoV-2 occurred unexpectedly in China in December 2019. hundreds of millions of confirmed cases and millions of confirmed deaths are reported worldwide according to the World Health Organisation. Now, the news about the virus is spreading all over social media websites. Consequently, these social media outlets are experiencing and presenting different views, opinions and emotions during various outbreak-related incidents. For Data engineers like us, big data are valuable assets for understanding people's sentiments regarding current events, especially those related to the pandemic. Therefore, analysing these sentiments will yield remarkable findings.
+
+## 
+
 This Project uses the [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/) (GKE) and [BigQuery](https://cloud.google.com/bigquery/what-is-bigquery) to build a 'pipeline' to stream Twitter data, via [Google Cloud PubSub](https://cloud.google.com/pubsub/docs) using Python.
 
 Kubernetes Engine is Google's managed version of [Kubernetes](http://github.com/GoogleCloudPlatform/kubernetes),
